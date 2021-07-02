@@ -5,13 +5,13 @@ env:
   APPLICATION_NAME: EEG-model
 jobs:
   lint:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-18.04   
     steps:
     - uses: actions/checkout@v1
     - name: Setup Python Environment
       uses: actions/setup-python@v1.1.1
     - name: Install requirements
-      run: pip install --quiet --requirement requirements.txt
+      run: pip install --quiet --r requirements.txt
     - name: Lint code
       run: | 
         flake8 --ignore=E501, E231 *.py
